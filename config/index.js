@@ -43,7 +43,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/F2E-5-ComicViewer/dist',
+    assetsPublicPath: '/F2E-5-ComicViewer/dist/',
 
     /**
      * Source Maps
