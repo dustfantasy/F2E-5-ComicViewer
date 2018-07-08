@@ -4,6 +4,7 @@
       Comicomic
     </header>
     <main>
+      <div class="select"></div>
       <div class="content">
         <div class="one"></div>
         <div class="two">
@@ -25,7 +26,7 @@
               </div>
               <div class="sub-intro">
                 <div class="column1">Rate</div>
-                <div class="column2"><Rate></Rate> </div>
+                <div class="column2"><Rate></Rate></div>
               </div>
               <div class="summary">
                 <div class="column1">summary</div>
@@ -39,15 +40,37 @@
             </div>
           </div>
         </div>
+        <div class="two-select">
+          <div class="title">My Hexschool</div>
+          <select>
+            <option value="0">Chapter 1</option>
+            <option value="1">Audi</option>
+          </select>
+          <select>
+            <option value="0">Chapter 1</option>
+            <option value="1">Audi</option>
+          </select>
+          <div class="theme">
+            <div><i class="fas fa-sun"></i></div>
+            <div class="select">
+              <div class="dark"></div>
+              <div class="white"></div>
+            </div>
+            <div><i class="fas fa-moon"></i></div>
+          </div>
+        </div>
         <div class="three"></div>
         <div class="four">
           <div class="all-chapters">
             <div>All Chapters</div>
           </div>
           <div class="chapter">
-            <div>Chapter 1: The F2E Challenge Start!</div>
-            <div>Chapter 2: Todo List is Going Crazy!</div>
+            <div @click="showComic">Chapter 1: The F2E Challenge Start!</div>
+            <div @click="showComic">Chapter 2: Todo List is Going Crazy!</div>
           </div>
+        </div>
+        <div class="four-comic">
+
         </div>
         <div class="five"></div>
       </div>  
@@ -65,6 +88,9 @@ export default {
   mounted() {
   },
   methods: {
+    showComic() {
+
+    }
   }
 }
 </script>
@@ -202,12 +228,72 @@ html
                 width: 80px
               .column2
                 padding: 5px 0px
-                text-wrap: normal
                 font-family: Roboto;
                 font-size: 16px;
                 color: #000000;
                 line-height: 24px;
-
+      .two-select
+        &::after
+          content: ''
+          display: block
+          clear: both
+        .title
+          text-align: left
+          width: 145px
+          display: inline-block
+          font-weight: bold
+          font-family: Roboto;
+          font-size: 20px;
+          color: #000000;
+          position: relative
+          float: left
+          &::after
+            position: absolute;
+            content: "";
+            top: 8px;
+            right: 0px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-color: transparent transparent transparent #000 
+        select
+          float: left
+          border: 2px solid #000000
+          background-color: #fff
+          color: #000
+          width: 127px
+          height: 35px
+          font-weight: bold
+          font-family: Roboto;
+          font-size: 16px;
+          color: #000000;
+          display: inline-block
+          outline: none
+          &:nth-child(3)
+            border-left: 0px
+        .theme
+          float: right
+          > div
+            float: left
+            color: #000
+          .select
+            margin: 0px 10px
+            border: 2px solid #000
+            box-sizing: border-box;
+            width: 48px
+            height: 24px
+            padding: -10px
+            > div
+              width: 50%
+              height: 100%
+              float: left
+              margin: 0
+            .dark
+              background-color: #000
+            .white
+              background-color: #fff
+          .fa-sun,.fa-moon
+            font-size: 24px
       .three
         height: 120px
         background-image: url($img3)

@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/F2E-5-ComicViewer/dist',
     proxyTable: {},
 
     // Various Dev Server settings
